@@ -32,14 +32,10 @@ use Config;
 use Carp;
 use Cwd qw( getcwd );
 
-my @BASE_PATH = __PACKAGE__->cf_base_path;
-
+my @BASE_PATH         = __PACKAGE__->cf_base_path;
 my $COMMON_SOURCE_DIR = catdir( @BASE_PATH, 'common' );
-my $LEMON_DIR         = catdir( @BASE_PATH, 'lemon' );
-my $LEMON_EXE_PATH = catfile( $LEMON_DIR, "lemon$Config{_exe}" );
-my $CORE_SOURCE_DIR = catdir( @BASE_PATH, 'core' );
-my $LIB_DIR         = 'lib';
-my $IS_CPAN_DIST    = !@BASE_PATH;
+my $LIB_DIR           = 'lib';
+my $IS_CPAN_DIST      = !@BASE_PATH;
 my $CHARMONIZER_C;
 if ($IS_CPAN_DIST) {
     $CHARMONIZER_C = 'charmonizer.c';
@@ -68,39 +64,12 @@ sub new {
         $self->config( optimize => $optimize );
     }
 
+    $self->charmonizer_params( create_makefile => 1 );
     $self->charmonizer_params( charmonizer_c => $CHARMONIZER_C );
 
     $self->clownfish_params( autogen_header => $self->autogen_header );
 
     return $self;
-}
-
-sub _run_make {
-    my ( $self, %params ) = @_;
-    my @command           = @{ $params{args} };
-    my $dir               = $params{dir};
-    my $current_directory = getcwd();
-    chdir $dir if $dir;
-    unshift @command, 'CC=' . $self->config('cc');
-    if ( $self->config('cc') =~ /^cl\b/ ) {
-        unshift @command, "-f", "Makefile.MSVC";
-    }
-    elsif ( $^O =~ /mswin/i ) {
-        unshift @command, "-f", "Makefile.MinGW";
-    }
-    unshift @command, "$Config{make}";
-    system(@command) and confess("$Config{make} failed");
-    chdir $current_directory if $dir;
-}
-
-# Build the Lemon parser generator.
-sub ACTION_lemon {
-    my $self = shift;
-    print "Building the Lemon parser generator...\n\n";
-    $self->_run_make(
-        dir  => $LEMON_DIR,
-        args => [],
-    );
 }
 
 sub ACTION_copy_clownfish_includes {
@@ -189,43 +158,6 @@ sub ACTION_test_valgrind {
             . join( "\n    ", @failed ) . "\n";
         exit(1);
     }
-}
-
-# Run all .y files through lemon.
-sub ACTION_parsers {
-    my $self = shift;
-    $self->depends_on('lemon');
-    my $y_files = $self->rscan_dir( $CORE_SOURCE_DIR, qr/\.y$/ );
-    for my $y_file (@$y_files) {
-        my $c_file = $y_file;
-        my $h_file = $y_file;
-        $c_file =~ s/\.y$/.c/ or die "no match";
-        $h_file =~ s/\.y$/.h/ or die "no match";
-        next if $self->up_to_date( $y_file, [ $c_file, $h_file ] );
-        $self->add_to_cleanup( $c_file, $h_file );
-        system( $LEMON_EXE_PATH, '-q', $y_file ) and die "lemon failed";
-    }
-}
-
-sub ACTION_compile_custom_xs {
-    my $self = shift;
-
-    $self->depends_on(qw( parsers charmony ));
-
-    # Add extra compiler flags from Charmonizer.
-    my $charm_cflags = $self->charmony('EXTRA_CFLAGS');
-    if ($charm_cflags) {
-        my $cf_cflags = $self->clownfish_params('cflags');
-        if ($cf_cflags) {
-            $cf_cflags .= " $charm_cflags";
-        }
-        else {
-            $cf_cflags = $charm_cflags;
-        }
-        $self->clownfish_params( cflags => $cf_cflags );
-    }
-
-    $self->SUPER::ACTION_compile_custom_xs;
 }
 
 sub autogen_header {
@@ -389,7 +321,6 @@ sub ACTION_semiclean {
 
 sub ACTION_clean {
     my $self = shift;
-    $self->_run_make( dir => $LEMON_DIR, args => ['clean'] );
     $self->SUPER::ACTION_clean;
 }
 

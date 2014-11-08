@@ -20,15 +20,8 @@ use lib 'buildlib';
 use File::Spec::Functions qw( catdir );
 use Lucy::Build;
 
-my @BASE_PATH        = Lucy::Build->cf_base_path;
-my $MODULES_DIR      = catdir( @BASE_PATH, 'modules' );
-my $SNOWSTEM_SRC_DIR = catdir( $MODULES_DIR, qw( analysis snowstem source ) );
-my $SNOWSTEM_INC_DIR = catdir( $SNOWSTEM_SRC_DIR, 'include' );
-my $SNOWSTOP_SRC_DIR = catdir( $MODULES_DIR, qw( analysis snowstop source ) );
-my $UCD_INC_DIR      = catdir( $MODULES_DIR, qw( unicode ucd ) );
-my $UTF8PROC_SRC_DIR = catdir( $MODULES_DIR, qw( unicode utf8proc ) );
-my $CORE_SOURCE_DIR  = catdir( @BASE_PATH, 'core' );
-my $XS_SOURCE_DIR    = 'xs';
+my @BASE_PATH       = Lucy::Build->cf_base_path;
+my $CORE_SOURCE_DIR = catdir( @BASE_PATH, 'core' );
 
 my @cf_linker_flags = Clownfish::CFC::Perl::Build->cf_linker_flags(
     'Clownfish',
@@ -64,18 +57,10 @@ my $builder = Lucy::Build->new(
     },
     include_dirs => [
         $CORE_SOURCE_DIR,
-        $XS_SOURCE_DIR,
-        $SNOWSTEM_INC_DIR,
-        $UCD_INC_DIR,
-        $UTF8PROC_SRC_DIR,
     ],
     clownfish_params => {
         source => [
             $CORE_SOURCE_DIR,
-            $XS_SOURCE_DIR,
-            $SNOWSTEM_SRC_DIR,
-            $SNOWSTOP_SRC_DIR,
-            $UTF8PROC_SRC_DIR,
         ],
     },
     extra_linker_flags => [ @cf_linker_flags ],

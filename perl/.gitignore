@@ -4,15 +4,17 @@
 /Charmony.pm
 /MYMETA.json
 /MYMETA.yml
+/Makefile
 /_build/
 /autogen/
 /blib/
+/charmonize.c
 /charmonizer
 /charmonizer.exe
-/charmonize.c
 /charmony.h
 /lib/Lucy.c
 /lib/Lucy.xs
+/liblucy.*
 /ppport.h
 /typemap
 
