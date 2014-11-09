@@ -22,7 +22,7 @@ parcel Lucy;
  * written, are never modified, a Snapshot defines a point-in-time view of the
  * data in an index.
  *
- * L<IndexReader|Lucy::Index::IndexReader> objects interpret the data
+ * [IndexReader](clownfish:class:lucy:IndexReader) objects interpret the data
  * associated with a single Snapshot.
  */
 

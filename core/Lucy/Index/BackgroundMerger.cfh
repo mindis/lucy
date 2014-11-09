@@ -23,7 +23,7 @@ parcel Lucy;
  * complete.  See L<Lucy::Docs::Cookbook::FastUpdates> for how to use
  * this class to control worst-case index update performance.
  *
- * As with L<Indexer|Lucy::Index::Indexer>, see
+ * As with [Indexer](clownfish:class:lucy:Indexer), see
  * L<Lucy::Docs::FileLocking> if your index is on a shared volume.
  */
 public class Lucy::Index::BackgroundMerger nickname BGMerger

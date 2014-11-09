@@ -22,15 +22,15 @@ parcel Lucy;
  * necessary to define a search query.
  *
  * The most common way to generate Query objects is to feed a search string
- * such as 'foo AND bar' to a L<QueryParser's|Lucy::Search::QueryParser>
+ * such as 'foo AND bar' to a [QueryParser's](clownfish:class:lucy:QueryParser)
  * Parse() method, which outputs an abstract syntax tree built up from various
- * Query subclasses such as L<ANDQuery|Lucy::Search::ANDQuery> and
- * L<TermQuery|Lucy::Search::TermQuery>.  However, it is also possible
+ * Query subclasses such as [ANDQuery](clownfish:class:lucy:ANDQuery) and
+ * [TermQuery](clownfish:class:lucy:TermQuery).  However, it is also possible
  * to use custom Query objects to build a search specification which cannot be
  * easily represented using a search string.
  *
  * Subclasses of Query must implement Make_Compiler(), which is the first step
- * in compiling a Query down to a L<Matcher|Lucy::Search::Matcher> which
+ * in compiling a Query down to a [Matcher](clownfish:class:lucy:Matcher) which
  * can actually match and score documents.
  */
 

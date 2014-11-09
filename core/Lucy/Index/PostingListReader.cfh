@@ -18,7 +18,7 @@ parcel Lucy;
 
 /** Read postings data.
  *
- * PostingListReaders produce L<PostingList|Lucy::Index::PostingList>
+ * PostingListReaders produce [PostingList](clownfish:class:lucy:PostingList)
  * objects which convey document matching information.
  */
 public class Lucy::Index::PostingListReader nickname PListReader

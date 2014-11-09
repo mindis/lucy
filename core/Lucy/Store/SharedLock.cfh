@@ -19,7 +19,7 @@ parcel Lucy;
 /** Shared (read) lock.
  *
  * SharedLock's interface is nearly identical to that of its parent class
- * L<Lucy::Store::Lock>, taking the same constructor arguments and
+ * [Lock](clownfish:class:lucy:Lock), taking the same constructor arguments and
  * implementing the same list of methods.  It differs from Lock only in the
  * semantics of two methods.
  *

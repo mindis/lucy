@@ -21,10 +21,10 @@ parcel Lucy;
  * DataWriter is an abstract base class for writing index data, generally in
  * segment-sized chunks. Each component of an index -- e.g. stored fields,
  * lexicon, postings, deletions -- is represented by a
- * DataWriter/L<DataReader|Lucy::Index::DataReader> pair.
+ * DataWriter/[DataReader](clownfish:class:lucy:DataReader) pair.
  *
  * Components may be specified per index by subclassing
- * L<Architecture|Lucy::Plan::Architecture>.
+ * [Architecture](clownfish:class:lucy:Architecture).
  */
 
 public class Lucy::Index::DataWriter inherits Clownfish::Obj {

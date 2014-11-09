@@ -22,8 +22,8 @@ parcel Lucy;
  * postings, stored documents, deletions, and highlight data.  The readers and
  * writers for that data are spawned by Architecture.  Each component operates
  * at the segment level; Architecture's factory methods are used to build up
- * L<SegWriter|Lucy::Index::SegWriter> and
- * L<SegReader|Lucy::Index::SegReader>.
+ * [SegWriter](clownfish:class:lucy:SegWriter) and
+ * [SegReader](clownfish:class:lucy:SegReader).
  */
 public class Lucy::Plan::Architecture nickname Arch inherits Clownfish::Obj {
 

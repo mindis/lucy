@@ -34,7 +34,7 @@ public class Lucy::Store::LockFactory nickname LockFact
     new(Folder *folder, String *host);
 
     /**
-     * @param folder A L<Lucy::Store::Folder>.
+     * @param folder A [Folder](clownfish:class:lucy:Folder).
      * @param host An identifier which should be unique per-machine.
      */
     public inert LockFactory*

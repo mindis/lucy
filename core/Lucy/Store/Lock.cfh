@@ -157,7 +157,7 @@ class Lucy::Store::LockFileLock nickname LFLock
 
 /** Lock exception.
  *
- * LockErr is a subclass of L<Err|Clownfish::Err> which indicates
+ * LockErr is a subclass of [Err](clownfish:class:cfish:Err) which indicates
  * that a file locking problem occurred.
  */
 public class Lucy::Store::LockErr inherits Clownfish::Err {
