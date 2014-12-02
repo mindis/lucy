@@ -32,7 +32,7 @@ parcel Lucy;
  * * Logical groups, delimited by parentheses.
  * * Phrases, delimited by double quotes.
  *
- * Additionally, the following syntax can be enabled via Set_Heed_Colons():
+ * Additionally, the following syntax can be enabled via [Set_Heed_Colons()](clownfish:method:Set_Heed_Colons):
  *
  * * Field-specific constructs, in the form of 'fieldname:termtext' or
  *   'fieldname:(foo bar)'.  (The field specified by 'fieldname:' will be
@@ -76,7 +76,7 @@ public class Lucy::Search::QueryParser nickname QParser
         String *default_boolop = NULL, VArray *fields = NULL);
 
     /** Build a Query object from the contents of a query string.  At present,
-     * implemented internally by calling Tree(), Expand(), and Prune().
+     * implemented internally by calling [Tree()](clownfish:method:Tree), [Expand()](clownfish:method:Expand), and [Prune()](clownfish:method:Prune).
      *
      * @param query_string The string to be parsed.  May be NULL.
      * @return a Query.
@@ -90,8 +90,8 @@ public class Lucy::Search::QueryParser nickname QParser
      * well.  Internal nodes will be objects which subclass PolyQuery:
      * ANDQuery, ORQuery, NOTQuery, and RequiredOptionalQuery.
      *
-     * The output of Tree() is an intermediate form which must be passed
-     * through Expand() before being used to feed a search.
+     * The output of [Tree()](clownfish:method:Tree) is an intermediate form which must be passed
+     * through [Expand()](clownfish:method:Expand) before being used to feed a search.
      *
      * @param query_string The string to be parsed.
      * @return a Query.
@@ -100,7 +100,7 @@ public class Lucy::Search::QueryParser nickname QParser
     Tree(QueryParser *self, String *query_string);
 
     /** Walk the hierarchy of a Query tree, descending through all PolyQuery
-     * nodes and calling Expand_Leaf() on any LeafQuery nodes encountered.
+     * nodes and calling [Expand_Leaf()](clownfish:method:Expand_Leaf) on any LeafQuery nodes encountered.
      *
      * @param query A Query object.
      * @return A Query -- usually the same one that was supplied after
@@ -124,23 +124,23 @@ public class Lucy::Search::QueryParser nickname QParser
     Expand_Leaf(QueryParser *self, Query *query);
 
     /** Prevent certain Query structures from returning too many results.
-     * Query objects built via Tree() and Expand() can generate "return the
+     * Query objects built via [Tree()](clownfish:method:Tree) and [Expand()](clownfish:method:Expand) can generate "return the
      * world" result sets, such as in the case of
-     * `NOT a_term_not_in_the_index`; Prune() walks the hierarchy
+     * `NOT a_term_not_in_the_index`; [Prune()](clownfish:method:Prune) walks the hierarchy
      * and eliminates such branches.
      *
      *      'NOT foo'               => [NOMATCH]
      *      'foo OR NOT bar'        => 'foo'
      *      'foo OR (-bar AND -baz) => 'foo'
      *
-     * Prune() also eliminates some double-negative constructs -- even though
+     * [Prune()](clownfish:method:Prune) also eliminates some double-negative constructs -- even though
      * such constructs may not actually return the world:
      *
      *      'foo AND -(-bar)'      => 'foo'
      *
      * In this example, safety is taking precedence over logical consistency.
-     * If you want logical consistency instead, call Tree() then Expand(),
-     * skipping Prune().
+     * If you want logical consistency instead, call [Tree()](clownfish:method:Tree) then [Expand()](clownfish:method:Expand),
+     * skipping [Prune()](clownfish:method:Prune).
      *
      *
      * @param query A Query.

@@ -20,7 +20,7 @@ parcel Lucy;
  *
  * PolyReader conflates index data from multiple segments.  For instance, if
  * an index contains three segments with 10 documents each, PolyReader's
- * Doc_Max() method will return 30.
+ * [Doc_Max()](clownfish:method:Doc_Max) method will return 30.
  *
  * Some of PolyReader's [DataReader](clownfish:class:DataReader) components
  * may be less efficient or complete than the single-segment implementations

@@ -20,11 +20,11 @@ parcel Lucy;
  *
  * A Collector decides what to do with the hits that a
  * [Matcher](clownfish:class:Matcher) iterates through, based on how the
- * abstract Collect() method is implemented.
+ * abstract [Collect()](clownfish:method:Collect) method is implemented.
  *
  * Collectors operate on individual segments, but must operate within the
  * context of a larger collection.  Each time the collector moves to a new
- * segment, Set_Reader(), Set_Base() and Set_Matcher() will be called, and the
+ * segment, [Set_Reader()](clownfish:method:Set_Reader), [Set_Base()](clownfish:method:Set_Base) and [Set_Matcher()](clownfish:method:Set_Matcher) will be called, and the
  * collector must take the updated information into account.
  */
 
@@ -57,13 +57,13 @@ public abstract class Lucy::Search::Collector nickname Coll
     Set_Reader(Collector *self, SegReader *reader);
 
     /** Set the "base" document id, an offset which must be added to the
-     * `doc_id` supplied via Collect() to get the doc id for the
+     * `doc_id` supplied via [Collect()](clownfish:method:Collect) to get the doc id for the
      * larger index.
      */
     public void
     Set_Base(Collector *self, int32_t base);
 
-    /** Indicate whether the Collector will call Score() on its Matcher.
+    /** Indicate whether the Collector will call [Score()](clownfish:method:Matcher:Score) on its Matcher.
      */
     public abstract bool
     Need_Score(Collector *self);

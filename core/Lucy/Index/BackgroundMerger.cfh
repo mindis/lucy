@@ -68,16 +68,16 @@ public class Lucy::Index::BackgroundMerger nickname BGMerger
     /** Commit any changes made to the index.  Until this is called, none of
      * the changes made during an indexing session are permanent.
      *
-     * Calls Prepare_Commit() implicitly if it has not already been called.
+     * Calls [Prepare_Commit()](clownfish:method:Prepare_Commit) implicitly if it has not already been called.
      */
     public void
     Commit(BackgroundMerger *self);
 
-    /** Perform the expensive setup for Commit() in advance, so that Commit()
+    /** Perform the expensive setup for [Commit()](clownfish:method:Commit) in advance, so that [Commit()](clownfish:method:Commit)
      * completes quickly.
      *
-     * Towards the end of Prepare_Commit(), the BackgroundMerger attempts to
-     * re-acquire the write lock, which is then held until Commit() finishes
+     * Towards the end of [Prepare_Commit()](clownfish:method:Prepare_Commit), the BackgroundMerger attempts to
+     * re-acquire the write lock, which is then held until [Commit()](clownfish:method:Commit) finishes
      * and releases it.
      */
     public void

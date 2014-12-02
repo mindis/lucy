@@ -43,7 +43,7 @@ public abstract class Lucy::Store::Lock inherits Clownfish::Obj {
      * consist solely of characters matching [-_.A-Za-z0-9].
      * @param host A unique per-machine identifier.
      * @param timeout Time in milliseconds to keep retrying before abandoning
-     * the attempt to Obtain() a lock.
+     * the attempt to [Obtain()](clownfish:method:Obtain) a lock.
      * @param interval Time in milliseconds between retries.
      */
     public inert Lock*
@@ -55,7 +55,7 @@ public abstract class Lucy::Store::Lock inherits Clownfish::Obj {
     public abstract bool
     Shared(Lock *self);
 
-    /** Call Request() once per `interval` until Request() returns
+    /** Call [Request()](clownfish:method:Request) once per `interval` until [Request()](clownfish:method:Request) returns
      * success or the `timeout` has been reached.
      *
      * @return true on success, false on failure (sets Err_error).
@@ -65,12 +65,12 @@ public abstract class Lucy::Store::Lock inherits Clownfish::Obj {
 
     /** Make one attempt to acquire the lock.
      *
-     * The semantics of Request() differ depending on whether Shared() returns
-     * true.  If the Lock is Shared(), then Request() should not fail if
+     * The semantics of [Request()](clownfish:method:Request) differ depending on whether [Shared()](clownfish:method:Shared) returns
+     * true.  If the Lock is [Shared()](clownfish:method:Shared), then [Request()](clownfish:method:Request) should not fail if
      * another lock is held against the resource identified by
      * `name` (though it might fail for other reasons).  If it is
-     * not Shared() -- i.e. it's an exclusive (write) lock -- then other locks
-     * should cause Request() to fail.
+     * not [Shared()](clownfish:method:Shared) -- i.e. it's an exclusive (write) lock -- then other locks
+     * should cause [Request()](clownfish:method:Request) to fail.
      *
      * @return true on success, false on failure (sets Err_error).
      */

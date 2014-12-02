@@ -17,7 +17,7 @@
 parcel TestLucy;
 
 /**
- * Returns absurdly low values for Index_Interval() and Skip_Interval().
+ * Returns absurdly low values for [Index_Interval()](clownfish:method:Index_Interval) and [Skip_Interval()](clownfish:method:Skip_Interval).
  */
 
 class Lucy::Test::Plan::TestArchitecture nickname TestArch

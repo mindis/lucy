@@ -38,7 +38,7 @@ public abstract class Lucy::Analysis::Analyzer inherits Clownfish::Obj {
 
     /** Kick off an analysis chain, creating an Inversion from string input.
      * The default implementation simply creates an initial Inversion with a
-     * single Token, then calls Transform(), but occasionally subclasses will
+     * single Token, then calls [Transform()](clownfish:method:Transform), but occasionally subclasses will
      * provide an optimized implementation which minimizes string copies.
      */
     public incremented Inversion*

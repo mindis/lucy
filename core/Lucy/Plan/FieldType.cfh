@@ -130,7 +130,7 @@ public abstract class Lucy::Plan::FieldType nickname FType
     Binary(FieldType *self);
 
     /** Compare two values for the field.  The default implementation
-     * dispatches to the Compare_To() method of argument `a`.
+     * dispatches to the [Compare_To()](clownfish:method:Compare_To) method of argument `a`.
      *
      * @return a negative number if a is "less than" b, 0 if they are "equal",
      * and a positive number if a is "greater than" b.

@@ -83,7 +83,7 @@ public class Lucy::Index::DataWriter inherits Clownfish::Obj {
     /** Move content from an existing segment into the one currently being
      * written.
      *
-     * The default implementation calls Add_Segment() then Delete_Segment().
+     * The default implementation calls [Add_Segment()](clownfish:method:Add_Segment) then [Delete_Segment()](clownfish:method:Delete_Segment).
      *
      * @param reader The SegReader containing content to merge, which must
      * represent a segment which is part of the the current snapshot.

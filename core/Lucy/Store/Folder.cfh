@@ -19,7 +19,7 @@ parcel Lucy;
 /** Abstract class representing a directory.
  *
  * A "file" within a Folder might be a real file on disk -- or it might be a
- * RAM buffer.  Similarly, Delete() might delete a file from the file system, or
+ * RAM buffer.  Similarly, [Delete()](clownfish:method:Delete) might delete a file from the file system, or
  * a key-value pair from a hash, or something else.
  *
  * The archetypal implementation of Folder,

@@ -29,7 +29,7 @@ parcel Lucy;
  *
  * IndexReaders are composites; most of the work is done by individual
  * [DataReader](clownfish:class:DataReader) sub-components, which may be
- * accessed via Fetch() and Obtain().  The most efficient and powerful access
+ * accessed via [Fetch()](clownfish:method:Fetch) and [Obtain()](clownfish:method:Obtain).  The most efficient and powerful access
  * to index data happens at the segment level via
  * [SegReader](clownfish:class:SegReader)'s sub-components.
  */
