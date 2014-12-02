@@ -18,7 +18,7 @@ parcel Lucy;
 
 /** Normalize case, facilitating case-insensitive search.
  *
- * CaseFolder is DEPRECATED. Use [Normalizer](clownfish:class:lucy:Normalizer)
+ * CaseFolder is DEPRECATED. Use [Normalizer](clownfish:class:Normalizer)
  * instead.
  *
  * CaseFolder normalizes text according to Unicode case-folding rules, so that

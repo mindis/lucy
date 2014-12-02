@@ -19,10 +19,10 @@ parcel Lucy;
 /** Posting with per-position boost.
  *
  * RichPosting is similar to
- * [ScorePosting](clownfish:class:lucy:ScorePosting), but weighting is
+ * [ScorePosting](clownfish:class:ScorePosting), but weighting is
  * per-position rather than per-field.  To exploit this, you need a custom
- * [Analyzer](clownfish:class:lucy:Analyzer) which assigns varying boosts to
- * individual [Token](clownfish:class:lucy:Token) objects.
+ * [Analyzer](clownfish:class:Analyzer) which assigns varying boosts to
+ * individual [Token](clownfish:class:Token) objects.
  *
  * A typical application for RichPosting is an HTMLAnalyzer which assigns
  * boost based on the visual size and weight of the marked up text: H1

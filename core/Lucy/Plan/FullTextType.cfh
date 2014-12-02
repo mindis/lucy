@@ -19,14 +19,14 @@ parcel Lucy;
 /** Full-text search field type.
  *
  * Lucy::Plan::FullTextType is an implementation of
- * [FieldType](clownfish:class:lucy:FieldType) tuned for "full text search".
+ * [FieldType](clownfish:class:FieldType) tuned for "full text search".
  *
  * Full text fields are associated with an
- * [Analyzer](clownfish:class:lucy:Analyzer), which is used to tokenize and
+ * [Analyzer](clownfish:class:Analyzer), which is used to tokenize and
  * normalize the text so that it can be searched for individual words.
  *
  * For an exact-match, single value field type using character data, see
- * [StringType](clownfish:class:lucy:StringType).
+ * [StringType](clownfish:class:StringType).
  */
 public class Lucy::Plan::FullTextType inherits Lucy::Plan::TextType {
 
@@ -54,7 +54,7 @@ public class Lucy::Plan::FullTextType inherits Lucy::Plan::TextType {
     new(Analyzer *analyzer);
 
     /** Indicate whether to store data required by
-     * [Highlighter](clownfish:class:lucy:Highlighter) for excerpt selection and search
+     * [Highlighter](clownfish:class:Highlighter) for excerpt selection and search
      * term highlighting.
      */
     public void

@@ -18,7 +18,7 @@ parcel Lucy;
 
 /** Query matching an ordered list of terms.
  *
- * ProximityQuery is a subclass of [Query](clownfish:class:lucy:Query) for matching
+ * ProximityQuery is a subclass of [Query](clownfish:class:Query) for matching
  * against an ordered sequence of terms.
  */
 

@@ -40,12 +40,12 @@ public class Lucy::Highlight::Highlighter inherits Clownfish::Obj {
 
     /**
      * @param searcher An object which inherits from
-     * [Searcher](clownfish:class:lucy:Searcher), such as an
-     * [IndexSearcher](clownfish:class:lucy:IndexSearcher).
+     * [Searcher](clownfish:class:Searcher), such as an
+     * [IndexSearcher](clownfish:class:IndexSearcher).
      * @param query Query object or a query string.
      * @param field The name of the field from which to draw the excerpt.  The
      * field must marked as be `highlightable` (see
-     * [FieldType](clownfish:class:lucy:FieldType)).
+     * [FieldType](clownfish:class:FieldType)).
      * @param excerpt_length Maximum length of the excerpt, in characters.
      */
     public inert Highlighter*

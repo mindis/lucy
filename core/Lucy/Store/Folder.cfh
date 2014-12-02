@@ -23,7 +23,7 @@ parcel Lucy;
  * a key-value pair from a hash, or something else.
  *
  * The archetypal implementation of Folder,
- * [FSFolder](clownfish:class:lucy:FSFolder), represents a directory on
+ * [FSFolder](clownfish:class:FSFolder), represents a directory on
  * the file system holding a collection of files.
  */
 public abstract class Lucy::Store::Folder inherits Clownfish::Obj {

@@ -18,16 +18,16 @@ parcel Lucy;
 
 /** Multiple Analyzers in series.
  *
- * A PolyAnalyzer is a series of [Analyzers](clownfish:class:lucy:Analyzer),
+ * A PolyAnalyzer is a series of [Analyzers](clownfish:class:Analyzer),
  * each of which will be called upon to "analyze" text in turn.  You can
  * either provide the Analyzers yourself, or you can specify a supported
  * language, in which case a PolyAnalyzer consisting of a
- * [CaseFolder](clownfish:class:lucy:CaseFolder), a
- * [RegexTokenizer](clownfish:class:lucy:RegexTokenizer), and a
- * [SnowballStemmer](clownfish:class:lucy:SnowballStemmer) will be generated for you.
+ * [CaseFolder](clownfish:class:CaseFolder), a
+ * [RegexTokenizer](clownfish:class:RegexTokenizer), and a
+ * [SnowballStemmer](clownfish:class:SnowballStemmer) will be generated for you.
  *
  * The language parameter is DEPRECATED. Use
- * [EasyAnalyzer](clownfish:class:lucy:EasyAnalyzer) instead.
+ * [EasyAnalyzer](clownfish:class:EasyAnalyzer) instead.
  *
  * Supported languages:
  *
@@ -56,7 +56,7 @@ public class Lucy::Analysis::PolyAnalyzer inherits Lucy::Analysis::Analyzer {
 
     /**
      * @param language An ISO code from the list of supported languages.
-     * DEPRECATED, use [EasyAnalyzer](clownfish:class:lucy:EasyAnalyzer) instead.
+     * DEPRECATED, use [EasyAnalyzer](clownfish:class:EasyAnalyzer) instead.
      * @param analyzers An array of Analyzers.  The order of the analyzers
      * matters.  Don't put a SnowballStemmer before a RegexTokenizer (can't stem whole
      * documents or paragraphs -- just individual words), or a SnowballStopFilter

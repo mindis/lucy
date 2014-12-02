@@ -19,9 +19,9 @@ parcel Lucy;
 /** Transform a string into a Query object.
  *
  * QueryParser accepts search strings as input and produces
- * [Query](clownfish:class:lucy:Query) objects, suitable for feeding into
- * [IndexSearcher](clownfish:class:lucy:IndexSearcher) and other
- * [Searcher](clownfish:class:lucy:Searcher) subclasses.
+ * [Query](clownfish:class:Query) objects, suitable for feeding into
+ * [IndexSearcher](clownfish:class:IndexSearcher) and other
+ * [Searcher](clownfish:class:Searcher) subclasses.
  *
  * The following syntactical constructs are recognized by QueryParser:
  *
@@ -57,8 +57,8 @@ public class Lucy::Search::QueryParser nickname QParser
 
     /** Constructor.
      *
-     * @param schema A [Schema](clownfish:class:lucy:Schema).
-     * @param analyzer An [Analyzer](clownfish:class:lucy:Analyzer).
+     * @param schema A [Schema](clownfish:class:Schema).
+     * @param analyzer An [Analyzer](clownfish:class:Analyzer).
      * Ordinarily, the analyzers specified by each field's definition will be
      * used, but if `analyzer` is supplied, it will override and be used for
      * all fields.  This can lead to mismatches between what is in the index

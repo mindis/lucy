@@ -22,9 +22,9 @@ parcel Lucy;
  * an index contains three segments with 10 documents each, PolyReader's
  * Doc_Max() method will return 30.
  *
- * Some of PolyReader's [DataReader](clownfish:class:lucy:DataReader) components
+ * Some of PolyReader's [DataReader](clownfish:class:DataReader) components
  * may be less efficient or complete than the single-segment implementations
- * accessed via [SegReader](clownfish:class:lucy:SegReader).
+ * accessed via [SegReader](clownfish:class:SegReader).
  */
 public class Lucy::Index::PolyReader inherits Lucy::Index::IndexReader {
 
@@ -37,10 +37,10 @@ public class Lucy::Index::PolyReader inherits Lucy::Index::IndexReader {
     open(Obj *index, Snapshot *snapshot = NULL, IndexManager *manager = NULL);
 
     /**
-     * @param index Either a string filepath or a [Folder](clownfish:class:lucy:Folder).
+     * @param index Either a string filepath or a [Folder](clownfish:class:Folder).
      * @param snapshot A Snapshot.  If not supplied, the most recent snapshot
      * file will be used.
-     * @param manager An [IndexManager](clownfish:class:lucy:IndexManager).
+     * @param manager An [IndexManager](clownfish:class:IndexManager).
      * Read-locking is off by default; supplying this argument turns it on.
      */
     public inert nullable PolyReader*

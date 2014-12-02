@@ -19,7 +19,7 @@ parcel Lucy;
 /** Process hits.
  *
  * A Collector decides what to do with the hits that a
- * [Matcher](clownfish:class:lucy:Matcher) iterates through, based on how the
+ * [Matcher](clownfish:class:Matcher) iterates through, based on how the
  * abstract Collect() method is implemented.
  *
  * Collectors operate on individual segments, but must operate within the
@@ -77,7 +77,7 @@ public abstract class Lucy::Search::Collector nickname Coll
 /** Collector which records doc nums in a BitVector.
  *
  * BitCollector is a Collector which saves matching document ids in a
- * [BitVector](clownfish:class:lucy:BitVector).  It is useful for recording the
+ * [BitVector](clownfish:class:BitVector).  It is useful for recording the
  * entire set of documents which matches a query.
  */
 public class Lucy::Search::Collector::BitCollector nickname BitColl

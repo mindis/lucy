@@ -65,7 +65,7 @@ __END_C__
  * not settable.
  *
  * The `similarity` property is a
- * [Similarity](clownfish:class:lucy:Similarity) object which defines matching
+ * [Similarity](clownfish:class:Similarity) object which defines matching
  * and scoring behavior for the field.  It is required if the field is
  * `indexed`.
  */

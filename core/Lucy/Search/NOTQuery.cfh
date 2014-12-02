@@ -18,12 +18,12 @@ parcel Lucy;
 
 /** Invert the result set of another Query.
  *
- * A NOTQuery wraps another [Query](clownfish:class:lucy:Query) and matches
+ * A NOTQuery wraps another [Query](clownfish:class:Query) and matches
  * against its inverse document set.  All matching docs recieve a score of
  * 0.0.
  *
  * NOTQuery is often used in conjunction with
- * [ANDQuery](clownfish:class:lucy:ANDQuery) to provide "a AND NOT b"
+ * [ANDQuery](clownfish:class:ANDQuery) to provide "a AND NOT b"
  * semantics.
  */
 

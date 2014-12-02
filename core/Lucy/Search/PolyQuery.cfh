@@ -19,10 +19,10 @@ parcel Lucy;
 /** Base class for composite Query objects.
  *
  * PolyQuery serves as a shared base class for
- * [ANDQuery](clownfish:class:lucy:ANDQuery),
- * [ORQuery](clownfish:class:lucy:ORQuery),
- * [NOTQuery](clownfish:class:lucy:NOTQuery), and
- * [RequiredOptionalQuery](clownfish:class:lucy:RequiredOptionalQuery).  All of
+ * [ANDQuery](clownfish:class:ANDQuery),
+ * [ORQuery](clownfish:class:ORQuery),
+ * [NOTQuery](clownfish:class:NOTQuery), and
+ * [RequiredOptionalQuery](clownfish:class:RequiredOptionalQuery).  All of
  * these classes may serve as nodes in composite Query with a tree structure
  * which may be walked.
  */
