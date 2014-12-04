@@ -19,9 +19,9 @@ parcel Lucy;
 /** A simple analyzer chain.
  *
  * EasyAnalyzer is an analyzer chain consisting of a
- * [StandardTokenizer](clownfish:class:StandardTokenizer), a
- * [Normalizer](clownfish:class:Normalizer), and a
- * [SnowballStemmer](clownfish:class:SnowballStemmer).
+ * [](cfish:StandardTokenizer), a
+ * [](cfish:Normalizer), and a
+ * [](cfish:SnowballStemmer).
  *
  * Supported languages:
  *

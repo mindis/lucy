@@ -22,15 +22,15 @@ parcel Lucy;
  * necessary to define a search query.
  *
  * The most common way to generate Query objects is to feed a search string
- * such as 'foo AND bar' to a [QueryParser's](clownfish:class:QueryParser)
- * [Parse()](clownfish:method:QueryParser:Parse) method, which outputs an abstract syntax tree built up from various
- * Query subclasses such as [ANDQuery](clownfish:class:ANDQuery) and
- * [TermQuery](clownfish:class:TermQuery).  However, it is also possible
+ * such as 'foo AND bar' to a [QueryParser's](cfish:QueryParser)
+ * [](cfish:QueryParser.Parse) method, which outputs an abstract syntax tree built up from various
+ * Query subclasses such as [](cfish:ANDQuery) and
+ * [](cfish:TermQuery).  However, it is also possible
  * to use custom Query objects to build a search specification which cannot be
  * easily represented using a search string.
  *
- * Subclasses of Query must implement [Make_Compiler()](clownfish:method:Make_Compiler), which is the first step
- * in compiling a Query down to a [Matcher](clownfish:class:Matcher) which
+ * Subclasses of Query must implement [](cfish:.Make_Compiler), which is the first step
+ * in compiling a Query down to a [](cfish:Matcher) which
  * can actually match and score documents.
  */
 
@@ -54,7 +54,7 @@ public class Lucy::Search::Query inherits Clownfish::Obj {
      * @param boost A scoring multiplier.
      * @param subordinate Indicates whether the Query is a subquery (as
      * opposed to a top-level query).  If false, the implementation must
-     * invoke [Normalize()](clownfish:method:Compiler:Normalize) on the newly minted Compiler object before returning
+     * invoke [](cfish:Compiler.Normalize) on the newly minted Compiler object before returning
      * it.
      */
     public abstract incremented Compiler*
